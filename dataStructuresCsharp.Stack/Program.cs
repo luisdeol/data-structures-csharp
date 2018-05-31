@@ -6,7 +6,7 @@ namespace dataStructuresCsharp.Stack
     {
         static void Main(string[] args)
         {
-            var stack = new Stack<string>(1);
+            var stack = new Stack<string>();
 
             stack.Push("Hello");
             stack.Push("World");

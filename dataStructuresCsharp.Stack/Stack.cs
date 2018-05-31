@@ -5,28 +5,28 @@ namespace dataStructuresCsharp.Stack
     public class Stack<T>
     {
         private T[] _array;
-        private int top = -1;
-        public Stack(int size)
+        private int _top = -1;
+        public Stack()
         {
-            _array = new T[size];
+            _array = new T[1];
         }
 
         public void Push(T value){
-            if (_array.Length-1 == top){
+            if (_array.Length-1 == _top){
                 IncreaseArraySize();
             }
 
-            top++;
-            _array[top] = value;
+            _top++;
+            _array[_top] = value;
         }
 
         public T Pop(){            
-            var oldTop = top--;
+            var oldTop = _top--;
             var oldTopValue = _array[oldTop];
 
             var halfLength = (float)_array.Length / 2;
 
-            if (top+1 < halfLength)
+            if (_top+1 < halfLength)
                 DecreaseArraySize();
 
             return _array[oldTop];
@@ -52,14 +52,14 @@ namespace dataStructuresCsharp.Stack
         }
 
         public void Display(){
-            for(int i=0; i <= top; i++){
+            for(int i=0; i <= _top; i++){
                 if (_array[i]==null)
                     break;
 
                 Console.WriteLine(_array[i]);
             }
 
-            Console.WriteLine($"Stack size is {_array.Length}");
+            Console.WriteLine($"Stack size is {_top+1}");
         }
     }
 }
