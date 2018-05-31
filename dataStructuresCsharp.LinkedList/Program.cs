@@ -8,8 +8,10 @@ namespace dataStructuresCsharp.LinkedList
         {
             var singlyLinkedList = new SinglyLinkedList<string>();
             singlyLinkedList.AddToTheEnd("Hello");
+            singlyLinkedList.AddToTheBeginning("Luis");
             singlyLinkedList.AddToTheEnd("World");
-
+            singlyLinkedList.AddToTheBeginning("Head");
+            singlyLinkedList.AddToNthPosition(0,"3th position node");
             singlyLinkedList.Display();
         }
     }
